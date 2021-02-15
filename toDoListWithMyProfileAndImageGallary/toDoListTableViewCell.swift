@@ -21,7 +21,9 @@ class toDoListTableViewCell: UIViewController {
           
     @IBAction func AddButton(_ sender: UIButton) {
         toDoListRemDataArray.append(toDoListFormat(title: titleTextField.text!, description: descriptiontextField.text!, isPriorityTask: Int(priorityTextField.text!)!))
-        let viewControllerObj = storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
-        self.navigationController?.pushViewController(viewControllerObj, animated: true)
+        print(toDoListRemDataArray.count)
+        
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        //self.navigationController?.popViewController(animated: true)
     }
 }

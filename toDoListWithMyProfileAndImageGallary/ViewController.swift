@@ -26,8 +26,9 @@ class ViewController: UIViewController {
                 let viewControllerObj = storyboard?.instantiateViewController(identifier: "toDoListTableViewCell") as! toDoListTableViewCell
                 present(viewControllerObj, animated: true, completion: nil)
     }
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        //tableView.reloadData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        toDoTableView.reloadData()
     }
     
 }
